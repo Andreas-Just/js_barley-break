@@ -46,17 +46,17 @@ function game(cells, empty) {
     cellsDOM.push(cell);
 
     const left = i % 4;
-    const tip = (i - left) / 4;
+    const top = (i - left) / 4;
 
     cells.push({
       value: value,
       left: left,
-      top: tip,
+      top: top,
       element: cell,
     });
 
     cell.style.left = `${left * cellSize}px`;
-    cell.style.top = `${tip * cellSize}px`;
+    cell.style.top = `${top * cellSize}px`;
     field.append(cell);
 
     cell.addEventListener('touchend', (e) => {
