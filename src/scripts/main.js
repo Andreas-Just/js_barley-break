@@ -5,7 +5,9 @@ const wrapper = document.querySelector('.wrapper');
 const startBtn = wrapper.querySelector('.header__btn');
 const field = wrapper.querySelector('.field');
 const won = wrapper.querySelector('.won');
-const cellSize = 80;
+const vw = window.innerWidth;
+const vh = window.innerHeight;
+const cellSize = vw < 460 || vh < 460 ? 75 : 100;
 
 startBtn.addEventListener('touchstart', (e) => {
   e.preventDefault();
@@ -30,14 +32,16 @@ startBtn.addEventListener('click', () => {
 });
 
 function game(cells, empty) {
-  const numbers = [...Array(15).keys()]
-    .sort(() => Math.random() - 0.5);
+  const numbers = [...Array(15).keys()];
+  // .sort(() => Math.random() - 0.5);
   const cellsDOM = [];
 
   for (let i = 0; i < 15; i++) {
     const cell = document.createElement('div');
     const cellNum = document.createElement('span');
     const value = numbers[i] + 1;
+    const leftPos = i % 4;
+    const topPos = (i - leftPos) / 4;
 
     cell.className = 'cell';
     cellNum.className = 'cell__num';
@@ -45,18 +49,15 @@ function game(cells, empty) {
     cellNum.innerHTML = `${value}`;
     cellsDOM.push(cell);
 
-    const left = i % 4;
-    const tip = (i - left) / 4;
-
     cells.push({
       value: value,
-      left: left,
-      top: tip,
+      left: leftPos,
+      top: topPos,
       element: cell,
     });
 
-    cell.style.left = `${left * cellSize}px`;
-    cell.style.top = `${tip * cellSize}px`;
+    cell.style.left = `${leftPos * cellSize}px`;
+    cell.style.top = `${topPos * cellSize}px`;
     field.append(cell);
 
     cell.addEventListener('touchend', (e) => {
