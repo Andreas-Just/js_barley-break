@@ -8,8 +8,8 @@
 
    Replace `<your_account>` with your Github username in the links
 
-    - [DEMO LINK](https://andreas-just.github.io/barley-break/)
-    - [PULL REQUEST](https://github.com/Andreas-Just/barley-break/pull/1)
+    - [DEMO LINK](https://andreas-just.github.io/js_barley-break/)
+    - [PULL REQUEST](https://github.com/Andreas-Just/js_barley-break/pull/1)
 
 ___
 ## Task
