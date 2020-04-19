@@ -1,7 +1,102 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "reset";
 
-body {
-  background: $c-gray;
+.body {
+  padding: 20px;
+  color: #ddd;
+  background-color: #301705f0;
+  font-weight: 500;
+}
+
+.wrapper {
+  height: 100vh;
+  text-align: center;
+}
+
+.header {
+
+  &__title {
+    font-weight: normal;
+  }
+
+  &__btn {
+    width: 150px;
+    padding: 8px 0;
+    font: inherit;
+    font-weight: bold;
+    font-size: 25px;
+    color: #111;
+    background-color: #efb07b;
+    outline: 3px outset #d8bda4;
+    outline-offset: -3px;
+    transition: all 300ms;
+  }
+
+  &__btn:hover {
+    background-color: #bf8570;
+  }
+
+  &__btn:focus {
+    outline: 3px outset #a4bed8;
+  }
+}
+
+.field {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background: url(../images/barley-brick.png) no-repeat;
+  background-size: cover;
+  outline: 4px outset #cea681;
+  outline-offset: 5px;
+}
+
+.cell {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  color: #111;
+  background-color: #efb07b;
+  border: 5px solid #301705f0;
+  outline: 3px outset #d8bda4;
+  outline-offset: -5px;
+  transition: all 300ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #bf8570;
+  }
+  &:focus {
+    background-color: #efb07b;
+  }
+  &__num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 86%;
+    height: 86%;
+    font-size: 48px;
+    box-shadow: inset 20px 25px 35px -25px rgba(0,0,0,0.4),
+      inset -20px -25px 35px -25px rgba(255,255,255,0.4);
+    border-radius: 50%;
+  }
+}
+
+.won {
+  height: 50px;
+  font-weight: normal;
+}
+
+canvas#c {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  z-index: -1;
 }
