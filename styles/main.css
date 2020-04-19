@@ -3,9 +3,27 @@ h1 {
   font-weight: 400; }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Source Sans Pro";
   src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
   font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular.ttf") format("woff"), url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Bold.ttf") format("woff"), url("../fonts/NotoSans-Bold.woff") format("woff"), url("../fonts/NotoSans-Bold.ttf") format("truetype");
+  font-weight: bold;
   font-style: normal; }
 
 html,
@@ -21,42 +39,74 @@ body {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
-.body {
-  padding: 20px;
+body {
   color: #ddd;
-  background-color: #301705f0;
-  font-weight: 500; }
+  background: #2b0d05 url("../images/bg.jpg") no-repeat top left/cover;
+  font-family: "Noto Sans", Roboto, sans-serif;
+  font-weight: normal; }
 
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 0 auto;
   height: 100vh;
   text-align: center; }
 
-.header__title {
-  font-weight: normal; }
-
-.header__btn {
-  width: 150px;
-  padding: 8px 0;
-  font: inherit;
-  font-weight: bold;
-  font-size: 25px;
-  color: #111;
-  background-color: #efb07b;
-  outline: 3px outset #d8bda4;
-  outline-offset: -3px;
-  -webkit-transition: all 300ms;
-  transition: all 300ms; }
-
-.header__btn:hover {
-  background-color: #bf8570; }
-
-.header__btn:focus {
-  outline: 3px outset #a4bed8; }
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 50px;
+  -webkit-transform: translateX(-90px);
+          transform: translateX(-90px); }
+  .header__title {
+    margin: 0 0 20px;
+    font-size: 40px;
+    text-shadow: -1px -1px 1px #ddd; }
+  .header__btn {
+    width: 150px;
+    padding: 8px 0;
+    font: inherit;
+    font-weight: bold;
+    font-size: 25px;
+    color: #111;
+    background-color: #efb07b;
+    outline: 3px outset #d8bda4;
+    outline-offset: -3px;
+    -webkit-transition: all 300ms;
+    transition: all 300ms; }
+  .header__btn:hover {
+    background-color: #bf8570; }
+  .header__btn:focus {
+    outline: 3px outset #a4bed8; }
 
 .field {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
   background: url(../images/barley-brick.png) no-repeat;
   background-size: cover;
   outline: 4px outset #cea681;
@@ -73,8 +123,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   color: #111;
   background-color: #efb07b;
   border: 5px solid #301705f0;
@@ -99,13 +149,17 @@ body {
             align-items: center;
     width: 86%;
     height: 86%;
-    font-size: 48px;
+    font-size: 34px;
+    text-shadow: -1px -1px 1px #111;
     -webkit-box-shadow: inset 20px 25px 35px -25px rgba(0, 0, 0, 0.4), inset -20px -25px 35px -25px rgba(255, 255, 255, 0.4);
             box-shadow: inset 20px 25px 35px -25px rgba(0, 0, 0, 0.4), inset -20px -25px 35px -25px rgba(255, 255, 255, 0.4);
     border-radius: 50%; }
 
 .won {
+  margin-top: 50px;
+  margin-bottom: 0;
   height: 50px;
+  font-size: 25px;
   font-weight: normal; }
 
 canvas#c {
@@ -115,5 +169,33 @@ canvas#c {
   left: 0;
   background-color: #111;
   z-index: -1; }
+
+@media (max-width: 460px) {
+  .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 0;
+    margin-bottom: 28px;
+    -webkit-transform: none;
+            transform: none; }
+    .header__title {
+      margin: 0 30px 20px; }
+    .header__btn {
+      font-size: 22px; }
+  .field {
+    position: relative;
+    width: 300px;
+    height: 300px; }
+  .cell {
+    width: 75px;
+    height: 75px; }
+  .won {
+    margin-top: 30px;
+    font-size: 20px; } }
 
 /*# sourceMappingURL=main.css.map */
