@@ -1,0 +1,119 @@
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+html,
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+.body {
+  padding: 20px;
+  color: #ddd;
+  background-color: #301705f0;
+  font-weight: 500; }
+
+.wrapper {
+  height: 100vh;
+  text-align: center; }
+
+.header__title {
+  font-weight: normal; }
+
+.header__btn {
+  width: 150px;
+  padding: 8px 0;
+  font: inherit;
+  font-weight: bold;
+  font-size: 25px;
+  color: #111;
+  background-color: #efb07b;
+  outline: 3px outset #d8bda4;
+  outline-offset: -3px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms; }
+
+.header__btn:hover {
+  background-color: #bf8570; }
+
+.header__btn:focus {
+  outline: 3px outset #a4bed8; }
+
+.field {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background: url(../images/barley-brick.png) no-repeat;
+  background-size: cover;
+  outline: 4px outset #cea681;
+  outline-offset: 5px; }
+
+.cell {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80px;
+  height: 80px;
+  color: #111;
+  background-color: #efb07b;
+  border: 5px solid #301705f0;
+  outline: 3px outset #d8bda4;
+  outline-offset: -5px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  cursor: pointer; }
+  .cell:hover {
+    background-color: #bf8570; }
+  .cell:focus {
+    background-color: #efb07b; }
+  .cell__num {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 86%;
+    height: 86%;
+    font-size: 48px;
+    -webkit-box-shadow: inset 20px 25px 35px -25px rgba(0, 0, 0, 0.4), inset -20px -25px 35px -25px rgba(255, 255, 255, 0.4);
+            box-shadow: inset 20px 25px 35px -25px rgba(0, 0, 0, 0.4), inset -20px -25px 35px -25px rgba(255, 255, 255, 0.4);
+    border-radius: 50%; }
+
+.won {
+  height: 50px;
+  font-weight: normal; }
+
+canvas#c {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  z-index: -1; }
+
+/*# sourceMappingURL=main.css.map */
