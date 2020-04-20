@@ -9,12 +9,6 @@ h1 {
   font-style: normal; }
 
 @font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Bold-webfont.woff") format("woff");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
   font-family: "Noto Sans";
   src: url("../fonts/NotoSans-Regular.ttf") format("woff"), url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -63,7 +57,8 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   text-align: center; }
 
 .header {
@@ -170,7 +165,7 @@ canvas#c {
   background-color: #111;
   z-index: -1; }
 
-@media (max-width: 460px) {
+@media (max-width: 470px), (max-height: 470px) {
   .header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
