@@ -1,7 +1,155 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "reset";
 
 body {
-  background: $c-gray;
+  color: #ddd;
+  background: #2b0d05 url("../images/bg.jpg") no-repeat top left / cover;
+  font-family: "Noto Sans", Roboto, sans-serif;
+  font-weight: normal;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: auto;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  transform: translateX(-90px);
+
+  &__title {
+    margin: 0 0 20px;
+    font-size: 40px;
+    text-shadow: -1px -1px 1px #ddd;
+  }
+
+  &__btn {
+    width: 150px;
+    padding: 8px 0;
+    font: inherit;
+    font-weight: bold;
+    font-size: 25px;
+    color: #111;
+    background-color: #efb07b;
+    outline: 3px outset #d8bda4;
+    outline-offset: -3px;
+    transition: all 300ms;
+  }
+
+  &__btn:hover {
+    background-color: #bf8570;
+  }
+
+  &__btn:focus {
+    outline: 3px outset #a4bed8;
+  }
+}
+
+.field {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: url(../images/barley-brick.png) no-repeat;
+  background-size: cover;
+  outline: 4px outset #cea681;
+  outline-offset: 5px;
+}
+
+.cell {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  color: #111;
+  background-color: #efb07b;
+  border: 5px solid #301705f0;
+  outline: 3px outset #d8bda4;
+  outline-offset: -5px;
+  transition: all 300ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #bf8570;
+  }
+  &:focus {
+    background-color: #efb07b;
+  }
+  &__num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 86%;
+    height: 86%;
+    font-size: 34px;
+    text-shadow: -1px -1px 1px #111;
+    box-shadow: inset 20px 25px 35px -25px rgba(0,0,0,0.4),
+      inset -20px -25px 35px -25px rgba(255,255,255,0.4);
+    border-radius: 50%;
+  }
+}
+
+.won {
+  margin-top: 50px;
+  margin-bottom: 0;
+  height: 50px;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+canvas#c {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  z-index: -1;
+}
+
+@media (max-width: 470px), (max-height: 470px) {
+  .header {
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 0;
+    margin-bottom: 28px;
+    transform: none;
+
+    &__title {
+      margin: 0 30px 20px;
+    }
+
+    &__btn {
+      font-size: 22px;
+    }
+  }
+
+  .field {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  .cell {
+    width: 75px;
+    height: 75px;
+  }
+
+  .won {
+    margin-top: 30px;
+    font-size: 20px;
+  }
 }
