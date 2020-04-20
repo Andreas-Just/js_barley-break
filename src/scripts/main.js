@@ -5,9 +5,15 @@ const wrapper = document.querySelector('.wrapper');
 const startBtn = wrapper.querySelector('.header__btn');
 const field = wrapper.querySelector('.field');
 const won = wrapper.querySelector('.won');
-const vw = window.innerWidth;
-const vh = window.innerHeight;
-const cellSize = vw < 460 || vh < 460 ? 75 : 100;
+let vw, vh, cellSize;
+
+const reportWindowSize = () => {
+  vw = window.innerWidth;
+  vh = window.innerHeight;
+  cellSize = vw < 470 || vh < 470 ? 75 : 100;
+};
+
+reportWindowSize();
 
 startBtn.addEventListener('touchstart', (e) => {
   e.preventDefault();
@@ -20,6 +26,7 @@ startBtn.addEventListener('click', () => {
   startBtn.textContent = 'Restart';
   won.textContent = 'To restart the game, click "Restart"';
   won.style.textTransform = 'none';
+  window.onresize = reportWindowSize;
 
   const cells = [];
   const empty = {

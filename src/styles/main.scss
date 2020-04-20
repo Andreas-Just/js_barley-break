@@ -17,7 +17,8 @@ body {
   align-items: center;
   flex-grow: 1;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   text-align: center;
 }
 
@@ -119,7 +120,7 @@ canvas#c {
   z-index: -1;
 }
 
-@media (max-width: 460px) {
+@media (max-width: 470px), (max-height: 470px) {
   .header {
     flex-direction: row;
     justify-content: center;
