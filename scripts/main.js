@@ -39,8 +39,8 @@ startBtn.addEventListener('click', () => {
 });
 
 function game(cells, empty) {
-  const numbers = [...Array(15).keys()];
-  // .sort(() => Math.random() - 0.5);
+  const numbers = [...Array(15).keys()]
+    .sort(() => Math.random() - 0.5);
   const cellsDOM = [];
 
   for (let i = 0; i < 15; i++) {
